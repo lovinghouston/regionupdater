@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAGA_METADATA>
+  <HISTORY>
+    <FILE>C:\Users\crazy\Downloads\HighAttendanceZones1920\HighAttendanceZones1920.dbf</FILE>
+  </HISTORY>
+  <SOURCE>
+    <FILE>C:\Users\crazy\Downloads\HighAttendanceZones1920\HighAttendanceZones1920.dbf</FILE>
+    <DATABASE>
+      <FIELDS>
+        <FIELD TYPE="LONGINT">OBJECTID</FIELD>
+        <FIELD TYPE="STRING">High_Schoo</FIELD>
+        <FIELD TYPE="STRING">Office_Area</FIELD>
+        <FIELD TYPE="STRING">code</FIELD>
+        <FIELD TYPE="DOUBLE">SqMi</FIELD>
+        <FIELD TYPE="DOUBLE">Shape_Leng</FIELD>
+        <FIELD TYPE="DOUBLE">Shape_Area</FIELD>
+      </FIELDS>
+    </DATABASE>
+    <PROJECTION></PROJECTION>
+  </SOURCE>
+  <DESCRIPTION></DESCRIPTION>
+</SAGA_METADATA>
