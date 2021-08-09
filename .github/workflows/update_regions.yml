@@ -3,10 +3,6 @@ name: "Update Regions"
 on:
   workflow_dispatch:
 
-env:
-  AUTH_URL: ${{ secrets.AUTH_URL }}
-  ITERATIONS_END: ${{ secrets.ITERATIONS_END }}
-
 jobs:
     update_regions:
 
@@ -40,6 +36,9 @@ jobs:
 
           - name: Update Regions
             run: python3 regionUpdaterCode.py
+            env:
+              AUTH_URL: ${{ secrets.AUTH_URL }}
+              ITERATIONS_END: ${{ secrets.ITERATIONS_END }}
             
           - name: Archive Region Updater Results
             uses: actions/upload-artifact@v2
