@@ -13,7 +13,7 @@ import requests #install
 #return that as error in the tracker (change the name of the CSV too)
 #figure out what happened with that Kansas one
 
-HoustonISD = gpd.read_file("shape/HoustonISD/HighAttendanceZones1920/Original/HighAttendanceZones1920.shp")
+HoustonISD = gpd.read_file("shape/HoustonISD/HighAttendanceZones1920.shp")
 TexasDistricts = gpd.read_file("shape/TexasSchoolDistricts/SchoolDistricts_2021.shp")
 
 alldistricts = [] #TEMPORARY
