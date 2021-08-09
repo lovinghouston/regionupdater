@@ -126,7 +126,7 @@ for i in range(len(churches)):
         CurPoint = Point(Transformer.from_crs("epsg:4326", "epsg:3081").transform(churches[i][LatIndex],churches[i][LongIndex]))
         result = DistLocate(CurChurch,CurPoint)
 
-   print(str(i) + " " + str(churches[i][IDIndex]) + ": " + str(result) + " " + str(CurChurch))
+    print(str(i) + " " + str(churches[i][IDIndex]) + ": " + str(result) + " " + str(CurChurch))
 
     url = "https://lovinghouston--partial.my.salesforce.com/services/data/v50.0/sobjects/Account/" + str(churches[i][IDIndex])
     headers = {
@@ -140,8 +140,8 @@ for i in range(len(churches)):
     logLine = [i,churches[i][IDIndex],CurChurch,result,response.text,anyError]
     logResults.append(logLine)
 
-   if i<20:
-       break
+    if i<20:
+        break
 
 with open('Region Updater Results Tracker.csv', 'w', newline='') as csvfile:
     csvwriter = csv.writer(csvfile) 
