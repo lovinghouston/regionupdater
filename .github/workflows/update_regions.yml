@@ -30,4 +30,4 @@ jobs:
               pip install shapely
 
           - name: Update Regions
-            run: python3 github-python-test.py
+            run: python3 regionUpdaterCode.py
