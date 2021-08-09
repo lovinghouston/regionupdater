@@ -15,7 +15,7 @@ import os
 HoustonISD = gpd.read_file("shape/HoustonISD/HighAttendanceZones1920.shp")
 TexasDistricts = gpd.read_file("shape/TexasSchoolDistricts/SchoolDistricts_2021.shp")
 
-iterationsEnd = os.environ.get("ITERATIONS_END")
+iterationsEnd = os.environ.get('ITERATIONS_END')
 alldistricts = [] #TEMPORARY
 #ITERATIONS_END = 2000 #For testing - ends iterations early
 churches = []
@@ -23,7 +23,7 @@ logResults = []
 logResults.append(["Number","Church Account ID","Church Name","Region Update Input","API Response Text","Error"])
 
 #Retrieve Access Token
-url = os.environ.get("AUTH_URL") #put information to get token
+url = os.environ.get('AUTH_URL') #put information to get token
 payload = ""
 headers = {
   'Cookie': 'BrowserId=L1U6KxlzEeuszK_80mI4gA; CookieConsentPolicy=0:0'
