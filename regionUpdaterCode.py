@@ -24,6 +24,7 @@ logResults.append(["Number","Church Account ID","Church Name","Region Update Inp
 
 #Retrieve Access Token
 url = os.environ.get('AUTH_URL') #put information to get token
+print("url:" + url)
 payload = ""
 headers = {
   'Cookie': 'BrowserId=L1U6KxlzEeuszK_80mI4gA; CookieConsentPolicy=0:0'
