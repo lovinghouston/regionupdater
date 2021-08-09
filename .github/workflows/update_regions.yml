@@ -38,7 +38,7 @@ jobs:
             env:
               AUTH_URL: ${{ secrets.AUTH_URL }}
               ITERATIONS_END: ${{ secrets.ITERATIONS_END }}
-            run: python regionUpdaterCode.py
+            run: python3 regionUpdaterCode.py
             
           - name: Archive Region Updater Results
             uses: actions/upload-artifact@v2
