@@ -21,7 +21,7 @@ logResults = []
 logResults.append(["Number","Church Account ID","Church Name","Region Update Input","API Response Text","Error"])
 
 #Retrieve Access Token
-url = "{{AUTH_URL}}" #put information to get token
+url = {{AUTH_URL}} #put information to get token
 payload = ""
 headers = {
   'Cookie': 'BrowserId=L1U6KxlzEeuszK_80mI4gA; CookieConsentPolicy=0:0'
