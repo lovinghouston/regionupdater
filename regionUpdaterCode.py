@@ -25,7 +25,7 @@ logResults.append(["Number","Church Account ID","Church Name","Region Update Inp
 #Note: Changed date to 7200 for testing purposes
 url = "https://lovinghouston--partial.my.salesforce.com/services/data/v40.0/query/?q=SELECT+Id,Name,BillingLongitude,BillingLatitude+FROM+Account+WHERE+Type+=+'Church'+AND+BillingLongitude+!=+null+AND+Houston_ISD_Region__c+=+null+AND+CreatedDate+=+LAST_N_DAYS:7200"
 headers = {
-    'Authorization': 'Bearer {{SF_ACCESS_TOKEN}}'
+    'Authorization': 'Bearer 00D6t0000008fyq!AR0AQKcs00wO13v5c_D_RugWA0omMUm8RfMXiS8WXASQarHEknZaFkz3SY4oX5QPl5njdimU7HZuVSGwKTFvQ0IIZwhW6P8_'
 }
 response = requests.request("GET", url, headers=headers)
 reader = json.loads(response.text)
@@ -131,7 +131,7 @@ for i in range(len(churches)):
     url = "https://lovinghouston--partial.my.salesforce.com/services/data/v50.0/sobjects/Account/" + str(churches[i][IDIndex])
     headers = {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer {{SF_ACCESS_TOKEN}}'
+        'Authorization': 'Bearer 00D6t0000008fyq!AR0AQKcs00wO13v5c_D_RugWA0omMUm8RfMXiS8WXASQarHEknZaFkz3SY4oX5QPl5njdimU7HZuVSGwKTFvQ0IIZwhW6P8_'
     }
     response = requests.request("PATCH", url, headers=headers, data=result)
 
@@ -140,11 +140,11 @@ for i in range(len(churches)):
     logLine = [i,churches[i][IDIndex],CurChurch,result,response.text,anyError]
     logResults.append(logLine)
 
-    if i<20:
+    if i>20:
         break
 
-with open('Region Updater Results Tracker.csv', 'w', newline='') as csvfile:
-    csvwriter = csv.writer(csvfile) 
+with open('RegionUpdaterResultsTracker.csv', 'w', newline='') as csvfile:
+    csvwriter = csv.writer(csvfile)
     csvwriter.writerows(logResults)
 
 
