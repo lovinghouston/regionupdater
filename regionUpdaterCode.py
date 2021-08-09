@@ -21,7 +21,7 @@ logResults = []
 logResults.append(["Number","Church Account ID","Church Name","Region Update Input","API Response Text","Error"])
 
 #Retrieve Access Token
-url = {{AUTH_URL}} #put information to get token
+url = "https://test.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9dzDZFnwTBRIfM90fHa5_kvWslawhPwt89vU8WAi6swLR_WIJp8RFB2UmBVD5G9Ms9hXVIL96x5fPprtx&client_secret={{CLIENT_SECRET}}&username=lovinghoustonjulian@lovinghouston.net.partial&password={{PASSWORD}}" #put information to get token
 payload = ""
 headers = {
   'Cookie': 'BrowserId=L1U6KxlzEeuszK_80mI4gA; CookieConsentPolicy=0:0'
