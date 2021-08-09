@@ -131,7 +131,7 @@ for i in range(len(churches)):
     url = "https://lovinghouston--partial.my.salesforce.com/services/data/v50.0/sobjects/Account/" + str(churches[i][IDIndex])
     headers = {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer 00D6t0000008fyq!AR0AQOt8H7EF0pMj3A3Z9uOP9xGtYR4Q10LLaM5xdG6vsrr3Y4wX5n321xB0KiQo40.t9ooja9EjdVyG7y2VA9HuGEj3Y1iw'
+        'Authorization': 'Bearer {{SF_ACCESS_TOKEN}}'
     }
     response = requests.request("PATCH", url, headers=headers, data=result)
 
