@@ -27,6 +27,7 @@ headers = {
   'Cookie': 'BrowserId=L1U6KxlzEeuszK_80mI4gA; CookieConsentPolicy=0:0'
 }
 response = requests.request("POST", url, headers=headers, data=payload)
+print(response.text)
 tokenTemp = response.text.replace('"',"").split(',')
 ttype = tokenTemp[3].split(':')[1]
 token = "" + ttype + " " + tokenTemp[0].split(':')[1] + ""
