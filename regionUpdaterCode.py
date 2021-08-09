@@ -14,6 +14,7 @@ import requests #install
 HoustonISD = gpd.read_file("shape/HoustonISD/HighAttendanceZones1920.shp")
 TexasDistricts = gpd.read_file("shape/TexasSchoolDistricts/SchoolDistricts_2021.shp")
 
+iterationsEnd = os.environ['ITERATIONS_END']
 alldistricts = [] #TEMPORARY
 #ITERATIONS_END = 2000 #For testing - ends iterations early
 churches = []
@@ -21,7 +22,7 @@ logResults = []
 logResults.append(["Number","Church Account ID","Church Name","Region Update Input","API Response Text","Error"])
 
 #Retrieve Access Token
-url = "https://test.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9dzDZFnwTBRIfM90fHa5_kvWslawhPwt89vU8WAi6swLR_WIJp8RFB2UmBVD5G9Ms9hXVIL96x5fPprtx&client_secret={{CLIENT_SECRET}}&username=lovinghoustonjulian@lovinghouston.net.partial&password={{PASSWORD}}" #put information to get token
+url = os.environ['AUTH_URL'] #put information to get token
 payload = ""
 headers = {
   'Cookie': 'BrowserId=L1U6KxlzEeuszK_80mI4gA; CookieConsentPolicy=0:0'
@@ -159,7 +160,7 @@ for i in range(len(churches)):
     logResults.append(logLine)
 
 #Temporary testing tool to cull number iterations early
-    if i>{{ITERATIONS_END}}:
+    if i>iterationsEnd:
         break
 
 #Enter logged data into CSV
