@@ -8,6 +8,7 @@ import geopandas as gpd #install
 import json
 import csv
 import requests #install
+import os
 
 #figure out what happened with that Kansas one
 
