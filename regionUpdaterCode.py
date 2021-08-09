@@ -21,7 +21,8 @@ churches = []
 logResults = []
 logResults.append(["Number","Church Account ID","Church Name","Region Update Input","API Response Text","Error"])
 
-#url = "https://lovinghouston--partial.my.salesforce.com/services/data/v40.0/query/?q=SELECT+Id,Name,BillingLongitude,BillingLatitude+FROM+Account+WHERE+Type+=+'Church'+AND+BillingLongitude+!=+null+AND+Houston_ISD_Region__c+=+null+AND+CreatedDate+=+LAST_N_DAYS:30"
+#url query to get Church data
+#Note: Changed date to 7200 for testing purposes
 url = "https://lovinghouston--partial.my.salesforce.com/services/data/v40.0/query/?q=SELECT+Id,Name,BillingLongitude,BillingLatitude+FROM+Account+WHERE+Type+=+'Church'+AND+BillingLongitude+!=+null+AND+Houston_ISD_Region__c+=+null+AND+CreatedDate+=+LAST_N_DAYS:7200"
 headers = {
     'Authorization': 'Bearer 00D6t0000008fyq!AR0AQOt8H7EF0pMj3A3Z9uOP9xGtYR4Q10LLaM5xdG6vsrr3Y4wX5n321xB0KiQo40.t9ooja9EjdVyG7y2VA9HuGEj3Y1iw'
@@ -33,6 +34,7 @@ reader = json.loads(response.text)
 #    jsonfile.write(response.text)
 #    reader = json.load(jsonfile)
 
+#Read church JSON
 for i in range(len(reader["records"])):
     tempID = reader["records"][i]["Id"]
     templong = reader["records"][i]["BillingLongitude"]
