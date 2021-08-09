@@ -3,6 +3,10 @@ name: "Update Regions"
 on:
   workflow_dispatch:
 
+env:
+  AUTH_URL: ${{ secrets.AUTH_URL }}
+  ITERATIONS_END: ${{ secrets.ITERATIONS_END }}
+
 jobs:
     update_regions:
 
@@ -35,9 +39,6 @@ jobs:
               pip install requests
 
           - name: Update Regions
-            env:
-              AUTH_URL: ${{ secrets.AUTH_URL }}
-              ITERATIONS_END: ${{ secrets.ITERATIONS_END }}
             run: python3 regionUpdaterCode.py
             
           - name: Archive Region Updater Results
