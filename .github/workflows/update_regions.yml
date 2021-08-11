@@ -1,7 +1,9 @@
 name: "Update Regions"
 
 on:
-  workflow_dispatch:
+  schedule:
+    # Runs every 5 minutes
+    - cron:  '*/5 * * * *'
 
 jobs:
     update_regions:
