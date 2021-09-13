@@ -1,10 +1,10 @@
 name: "Update Regions"
 
-	on:
-      push:
+on:
+    push:
         branches:
           - '**'
-#           - '!master'
+          - '!master'
 #   schedule:
 #     # Runs every 5 minutes
 #     - cron:  '*/6 * * * *'
