@@ -1,11 +1,11 @@
 name: "Update Regions"
 
 on:
-    push:
-        branches:
-          - '**'
-#   schedule:
-#     - cron:  '* * * * *'
+#     push:
+#         branches:
+#           - '**'
+  schedule:
+    - cron:  '* * * * *'
 
 jobs:
     update_regions:
