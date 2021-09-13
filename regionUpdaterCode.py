@@ -122,7 +122,7 @@ def Locate(church,point):
     region = ""
     for reg in range(len(HoustonISD)):
         if point.within(HoustonISD.loc[reg, 'geometry']) == 1:
-            region = '{"Houston_ISD_Region__c": "' + RegionSwitch(reg) + '", "ParentID": "0016t00000AmYsRAAV"}'
+            region = '{"Houston_ISD_Region__c": "' + RegionSwitch(reg) + '", "School_District_Lookup__c": "0016t00000AmYsRAAV"}'
     return region
 
 #Function to compare point against Texas School Districts polygons
@@ -130,7 +130,7 @@ def DistLocate(church,point):
     district = ""
     for dist in range(len(TexasDistricts)):
         if point.within(TexasDistricts.loc[dist]['geometry']) == 1:
-            district = '{"Houston_ISD_Region__c": "N/A", "ParentId": "' + DistrictSwitch(TexasDistricts.loc[dist]['NAME']) + '"}'
+            district = '{"Houston_ISD_Region__c": "N/A", "School_District_Lookup__c": "' + DistrictSwitch(TexasDistricts.loc[dist]['NAME']) + '"}'
 #            alldistricts.append(TexasDistricts.loc[dist]['NAME'])
     return district
 
