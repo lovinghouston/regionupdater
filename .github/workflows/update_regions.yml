@@ -1,9 +1,7 @@
 name: "Update Regions"
 
 on:
-#     push:
-#         branches:
-#           - '**'
+  workflow_dispatch:
   schedule:
     - cron:  '0 8 * * *'
 
