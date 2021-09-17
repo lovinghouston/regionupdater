@@ -58,6 +58,7 @@ for i in range(len(reader["records"])):
     row = tempID, tempname, templong, templat
     IDIndex, NameIndex, LongIndex, LatIndex = 0,1,2,3
     churches.append(row)
+    print(churches)
 
 #Switch function to parse area numbers into Houston ISD regions
 def RegionSwitch(argument):
