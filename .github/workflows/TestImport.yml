@@ -1,4 +1,4 @@
-name: "Update Regions"
+name: "Test Imports"
 
 on:
   workflow_dispatch:
