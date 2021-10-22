@@ -1,4 +1,4 @@
-name: "Test Imports"
+name: "Test RegionUpdate"
 
 on:
   workflow_dispatch:
@@ -39,9 +39,3 @@ jobs:
             env:
               AUTH_URL: ${{ secrets.AUTH_URL }}
               ITERATIONS_END: ${{ secrets.ITERATIONS_END }}
-            
-          - name: Archive Region Updater Results
-            uses: actions/upload-artifact@v2
-            with:
-              name: region-updater-results
-              path: RegionUpdaterResultsTracker.csv
