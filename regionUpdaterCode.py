@@ -48,6 +48,8 @@ reader = json.loads(response.text)
 if response.text == '[{"message":"Session expired or invalid","errorCode":"INVALID_SESSION_ID"}]':
     print(response.text)
     exit()
+    
+print(reader)
 
 #Read churches query into churches list, define indices and format 
 for i in range(len(reader["records"])):
