@@ -175,3 +175,4 @@ with open('RegionUpdaterResultsTracker.csv', 'w', newline='') as csvfile:
 #   Along with alldistricts definition above in DistLocate function, this provides list of all identified districts where churches are located
 #alldistricts = list(set(alldistricts))
 #print(alldistricts)
+
