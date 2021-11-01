@@ -32,7 +32,7 @@ headers = {
 response = requests.request("POST", url, headers=headers, data=payload)
 print(response.text)
 tokenTemp = response.text.replace('"',"").split(',')
-ttype = tokenTemp[3].split(':')[1]
+ttype = tokenTemp[5].split(':')[1]
 token = "" + ttype + " " + tokenTemp[0].split(':')[1] + ""
 
 #url query to get Church data
@@ -48,6 +48,8 @@ reader = json.loads(response.text)
 if response.text == '[{"message":"Session expired or invalid","errorCode":"INVALID_SESSION_ID"}]':
     print(response.text)
     exit()
+    
+print(reader)
 
 #Read churches query into churches list, define indices and format 
 for i in range(len(reader["records"])):
@@ -173,3 +175,4 @@ with open('RegionUpdaterResultsTracker.csv', 'w', newline='') as csvfile:
 #   Along with alldistricts definition above in DistLocate function, this provides list of all identified districts where churches are located
 #alldistricts = list(set(alldistricts))
 #print(alldistricts)
+
