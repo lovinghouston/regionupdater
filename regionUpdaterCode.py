@@ -24,13 +24,11 @@ logResults.append(["Number","Church Account ID","Church Name","Region Update Inp
 
 #Retrieve Access Token
 url = os.environ.get('AUTH_URL') #put information to get token
-print(url)
 payload = ""
 headers = {
   'Cookie': 'BrowserId=L1U6KxlzEeuszK_80mI4gA; CookieConsentPolicy=0:0'
 }
 response = requests.request("POST", url, headers=headers, data=payload)
-print(response.text)
 tokenTemp = response.text.replace('"',"").split(',')
 ttype = tokenTemp[5].split(':')[1]
 token = "" + ttype + " " + tokenTemp[0].split(':')[1] + ""
