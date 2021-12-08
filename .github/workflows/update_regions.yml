@@ -19,7 +19,7 @@ jobs:
 
           - name: Set up Python 3.9.7
             uses: actions/setup-python@v2
-            with: 
+            with:
               python-version: '3.9.7'
 
           - name: Install Dependencies
@@ -30,14 +30,14 @@ jobs:
               pip install shapely
               pip install geopandas
               pip install requests
-              
+
 
           - name: Update Regions
             run: python3 regionUpdaterCode.py
             env:
-              AUTH_URL: ${{ secrets.AUTH_URL }}
+              PROD_AUTH_URL: ${{ secrets.PROD_AUTH_URL }}
               ITERATIONS_END: ${{ secrets.ITERATIONS_END }}
-            
+
           - name: Archive Region Updater Results
             uses: actions/upload-artifact@v2
             with:
