@@ -37,7 +37,7 @@ print(token)
 
 #url query to get Church data
 #Note: Changed date to 7200 for testing purposes
-url = "https://lovinghouston.my.salesforce.com/services/data/v40.0/query/?q=SELECT+Id,Name,BillingLongitude,BillingLatitude+FROM+Account+WHERE+Type+=+'Church'+AND+BillingLongitude+!=+null+AND+Houston_ISD_Region__c+=+null+AND+CreatedDate+=+LAST_N_DAYS:7200"
+url = "https://lovinghouston.my.salesforce.com/services/data/v40.0/query/?q=SELECT+Id,Name,BillingLongitude,BillingLatitude,Parent.Name,Houston_ISD_Region__c+FROM+Account+WHERE+(Type+=+'Church'+AND+BillingLongitude+!=+null+AND+Parent.Name+=+null+AND+Houston_ISD_Region__c+=+null+AND+CreatedDate+=+LAST_N_DAYS:7200)+OR+(Parent.Name+=+'Houston+ISD'+AND+Houston_ISD_Region__c+=+null)"
 headers = {
     'Authorization': token
 }
@@ -94,29 +94,44 @@ def RegionSwitch(argument):
 #Switch function to parse district names into Salesforce Account IDs
 def DistrictSwitch(argument): #NOT DONE
     switcher = {
-    #'Columbus ISD': "",
-    'Cypress-Fairbanks ISD': "0011N000018j7K6QAI",
-    #'Spring Branch ISD': "0011N000018iy7eQAA",
-    'Aldine ISD': "0011N000018j7KNQAY",
-    'Tomball ISD': "0011N000018j7KCQAY",
-    'Pasadena ISD': "0011N000018j7K9QAI",
-    #'Dickinson ISD': "",
-    'New Caney ISD': "0011N000018j7K2QAI",
-    'Sheldon ISD': "0013l00002Hm1BrAAJ",
-    #'Lamar Cons ISD': "0011N000018iyBMQAY",
-    'Katy ISD': "0011N000018j7K8QAI",
-    'Spring ISD': "0011N000018j7K1QAI",
-    'Galena Park ISD': "0011N000018j7KKQAY",
-    'Conroe ISD': "0011N000018j7K5QAI",
-    'Brazosport ISD': "0011N00001VYDr2QAH",
-    'Humble ISD': "0011N000018j7KEQAY",
-    'Pearland ISD': "0011N000018j7KHQAY",
-    #'Beaumont ISD': "",
-    #'Fort Bend ISD': "0011N000018iyQhQAI",
-    'Clear Creek ISD': "0011N000018j7K4QAI",
-    #'Klein ISD': "0011N000018iyCRQAY",
-    'Alief ISD': "0011N000018j7K3QAI",
-    #'Stafford MSD': "",
+    "SPRING ISD": "0011N000018j7K1QAI",
+    "NEW CANEY ISD": "0011N000018j7K2QAI",
+    "ALIEF ISD": "0011N000018j7K3QAI",
+    "CLEAR CREEK ISD": "0011N000018j7K4QAI",
+    "CONROE ISD": "0011N000018j7K5QAI",
+    "CYPRESS-FAIRBANKS ISD": "0011N000018j7K6QAI",
+    "KATY ISD": "0011N000018j7K8QAI",
+    "PASADENA ISD": "0011N000018j7K9QAI",
+    "WALLER ISD": "0011N000018j7KAQAY",
+    "YES Prep": "0011N000018j7KBQAY",
+    "TOMBALL ISD": "0011N000018j7KCQAY",
+    "HUMBLE ISD": "0011N000018j7KEQAY",
+    "North Forest ISD": "0011N000018j7KFQAY",
+    "LA PORTE ISD": "0011N000018j7KGQAY",
+    "PEARLAND ISD": "0011N000018j7KHQAY",
+    "CROSBY ISD": "0011N000018j7KIQAY",
+    "EAST CHAMBERS ISD": "0011N000018j7KJQAY",
+    "GALENA PARK ISD": "0011N000018j7KKQAY",
+    "KIPP": "0011N000018j7KMQAY",
+    "ALDINE ISD": "0011N000018j7KNQAY",
+    "CHANNELVIEW ISD": "0011N000018j7KOQAY",
+    "GOOSE CREEK CISD": "0011N000018j7JrQAI",
+    "James DeAnda Elementary": "0013l00002OL0SPAA1",
+    "Brenham ISD": "0013l00002RLyxLAAT",
+    "Southwest Schools": "0013l00002RL9gUAAT",
+    "Milne Elementary School": "0013l00002OnploAAB",
+    "SPRING BRANCH ISD": "0011N000018iy7eQAA",
+    "KLEIN ISD": "0011N000018iyCRQAY",
+    "LAMAR CISD": "0011N000018iyBMQAY",
+    "SHELDON ISD": "0013l00002Hm1BrAAJ",
+    "HOUSTON ISD": "0011N000018iyKTQAY",
+    "FORT BEND ISD": "0011N000018iyQhQAI",
+    "ANGLETON ISD": "0011N00001VYEEsQAP",
+    "BRAZOSPORT ISD": "0011N00001VYDr2QAH",
+    "BRYAN ISD": "0011N00001jzfldQAA",
+    "Windham School District": "0011N00001k0DqsQAE",
+    "PORT NECHES-GROVES ISD": "0011N00001k0fYmQAI",
+    "ALAMO HEIGHTS ISD": "0011N00001k0fXkQAI",
     }
     return switcher.get(argument, "")
 
