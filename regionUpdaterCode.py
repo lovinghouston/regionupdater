@@ -23,6 +23,7 @@ logResults = []
 logResults.append(["Number","Church Account ID","Church Name","Region Update Input","API Response Text","Error"])
 
 #Retrieve Access Token
+#Uses REST password grant type i.e: https://developer.salesforce.com/docs/atlas.en-us.api_iot.meta/api_iot/qs_auth_access_token.htm
 url = os.environ.get('PROD_AUTH_URL') #put information to get token
 payload = ""
 headers = {
