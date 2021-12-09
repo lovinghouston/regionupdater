@@ -1,7 +1,7 @@
 from geopandas.io.file import read_file
 from numpy import cumproduct
 from shapely.geometry import Polygon, Point #install
-import shapely.speedups 
+import shapely.speedups
 shapely.speedups.enable()
 from pyproj import Transformer
 import geopandas as gpd #install
@@ -31,7 +31,7 @@ headers = {
 }
 response = requests.request("POST", url, headers=headers, data=payload)
 tokenTemp = response.text.replace('"',"").split(',')
-ttype = tokenTemp[5].split(':')[1]
+ttype = tokenTemp[3].split(':')[1]
 token = "" + ttype + " " + tokenTemp[0].split(':')[1] + ""
 print(token)
 
@@ -49,10 +49,10 @@ reader = json.loads(response.text)
 if response.text == '[{"message":"Session expired or invalid","errorCode":"INVALID_SESSION_ID"}]':
     print(response.text)
     exit()
-    
+
 print(reader)
 
-#Read churches query into churches list, define indices and format 
+#Read churches query into churches list, define indices and format
 for i in range(len(reader["records"])):
     tempID = reader["records"][i]["Id"]
     templong = reader["records"][i]["BillingLongitude"]
