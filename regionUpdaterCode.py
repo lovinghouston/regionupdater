@@ -36,7 +36,7 @@ token = "" + ttype + " " + tokenTemp[0].split(':')[1] + ""
 
 #url query to get Church data
 #Note: Changed date to 7200 for testing purposes
-url = "https://lovinghouston.my.salesforce.com/services/data/v40.0/query/?q=SELECT+Id,Name,BillingLongitude,BillingLatitude,Parent.Name,Houston_ISD_Region__c+FROM+Account+WHERE+(Type+=+'Church'+AND+BillingLongitude+!=+null+AND+Parent.Name+=+null+AND+Houston_ISD_Region__c+=+null+AND+CreatedDate+=+LAST_N_DAYS:7200)+OR+(Parent.Name+=+'Houston+ISD'+AND+Houston_ISD_Region__c+=+null)"
+url = "https://lovinghouston.my.salesforce.com/services/data/v40.0/query/?q=SELECT+Id,Name,BillingLongitude,BillingLatitude,Parent.Name,Houston_ISD_Region__c+FROM+Account+WHERE+(Type+=+'Church'+AND+BillingLongitude+!=+null+AND+AND+Houston_ISD_Region__c+=+null+AND+CreatedDate+=+LAST_N_DAYS:7200)+OR+(Parent.Name+=+'Houston+ISD'+AND+Houston_ISD_Region__c+=+null)"
 headers = {
     'Authorization': token
 }
@@ -139,7 +139,7 @@ def Locate(church,point):
     region = ""
     for reg in range(len(HoustonISD)):
         if point.within(HoustonISD.loc[reg, 'geometry']) == 1:
-            region = '{"Houston_ISD_Region__c": "' + RegionSwitch(reg) + '", "School_District_Lookup__c": "0016t00000AmYsRAAV"}'
+            region = '{"Houston_ISD_Region__c": "' + RegionSwitch(reg) + '", "School_District_Lookup__c": "0011N000018iyKTQAY"}'
     return region
 
 #Function to compare point against Texas School Districts polygons
