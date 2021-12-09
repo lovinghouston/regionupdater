@@ -33,6 +33,7 @@ response = requests.request("POST", url, headers=headers, data=payload)
 tokenTemp = response.text.replace('"',"").split(',')
 ttype = tokenTemp[5].split(':')[1]
 token = "" + ttype + " " + tokenTemp[0].split(':')[1] + ""
+print(token)
 
 #url query to get Church data
 #Note: Changed date to 7200 for testing purposes
@@ -42,6 +43,7 @@ headers = {
 }
 response = requests.request("GET", url, headers=headers)
 reader = json.loads(response.text)
+
 
 #Check if token is expired and quit program if so
 if response.text == '[{"message":"Session expired or invalid","errorCode":"INVALID_SESSION_ID"}]':
