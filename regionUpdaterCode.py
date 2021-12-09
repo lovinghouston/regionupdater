@@ -36,7 +36,7 @@ token = "" + ttype + " " + tokenTemp[0].split(':')[1] + ""
 
 #url query to get Church data
 #Note: Changed date to 7200 for testing purposes
-url = "https://lovinghouston.my.salesforce.com/services/data/v40.0/query/?q=SELECT+Id,Name,BillingLongitude,BillingLatitude,Parent.Name,Houston_ISD_Region__c+FROM+Account+WHERE+(Type+=+'Church'+AND+BillingLongitude+!=+null+AND+AND+Houston_ISD_Region__c+=+null+AND+CreatedDate+=+LAST_N_DAYS:7200)+OR+(Parent.Name+=+'Houston+ISD'+AND+Houston_ISD_Region__c+=+null)"
+url = "https://lovinghouston.my.salesforce.com/services/data/v40.0/query/?q=SELECT+Id,Name,BillingLongitude,BillingLatitude,Parent.Name,Houston_ISD_Region__c+FROM+Account+WHERE+(Type+=+'Church'+AND+BillingLongitude+!=+null+AND+Houston_ISD_Region__c+=+null+AND+CreatedDate+=+LAST_N_DAYS:7200)+OR+(Parent.Name+=+'Houston+ISD'+AND+Houston_ISD_Region__c+=+null)"
 headers = {
     'Authorization': token
 }
