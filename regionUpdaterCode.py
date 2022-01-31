@@ -36,7 +36,7 @@ print("token " + token)
 
 #url query to get Church data
 #Note: Changed date to 7200 for testing purposes
-url = "https://lovinghouston--partial.my.salesforce.com/services/data/v40.0/query/?q=SELECT+Id,Name,BillingLongitude,BillingLatitude+FROM+Account+WHERE+Type+=+'Church'+AND+BillingLongitude+!=+null+AND+Houston_ISD_Region__c+=+null+AND+CreatedDate+=+LAST_N_DAYS:7200"
+url = "https://lovinghouston.my.salesforce.com/services/data/v40.0/query/?q=SELECT+Id,Name,BillingLongitude,BillingLatitude+FROM+Account+WHERE+Type+=+'Church'+AND+BillingLongitude+!=+null+AND+Houston_ISD_Region__c+=+null+AND+CreatedDate+=+LAST_N_DAYS:7200"
 headers = {
     'Authorization': token
 }
@@ -150,7 +150,7 @@ for i in range(len(churches)):
 
     print(str(i) + " " + str(churches[i][IDIndex]) + ": " + str(result) + " " + str(CurChurch))
 
-    url = "https://lovinghouston--partial.my.salesforce.com/services/data/v50.0/sobjects/Account/" + str(churches[i][IDIndex])
+    url = "https://lovinghouston.my.salesforce.com/services/data/v50.0/sobjects/Account/" + str(churches[i][IDIndex])
     headers = {
         'Content-Type': 'application/json',
         'Authorization': token
