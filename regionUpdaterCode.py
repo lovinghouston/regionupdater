@@ -123,7 +123,7 @@ def Locate(church,point):
     region = ""
     for reg in range(len(HoustonISD)):
         if point.within(HoustonISD.loc[reg, 'geometry']) == 1:
-            region = '{"Houston_ISD_Region__c": "' + RegionSwitch(reg) + '", "School_District_Lookup__c": "0016t00000AmYsRAAV"}'
+            region = '{"Houston_ISD_Region__c": "' + RegionSwitch(reg) + '", "School_District_Lookup__c": "0011N000018iyKTQAY"}'
     return region
 
 #Function to compare point against Texas School Districts polygons
