@@ -30,7 +30,7 @@ headers = {
 }
 response = requests.request("POST", url, headers=headers, data=payload)
 tokenTemp = response.text.replace('"',"").split(',')
-ttype = tokenTemp[5].split(':')[1]
+ttype = tokenTemp[3].split(':')[1]
 token = "" + ttype + " " + tokenTemp[0].split(':')[1] + ""
 
 #url query to get Church data
