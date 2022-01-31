@@ -32,6 +32,7 @@ response = requests.request("POST", url, headers=headers, data=payload)
 tokenTemp = response.text.replace('"',"").split(',')
 ttype = tokenTemp[3].split(':')[1]
 token = "" + ttype + " " + tokenTemp[0].split(':')[1] + ""
+print("token " + token)
 
 #url query to get Church data
 #Note: Changed date to 7200 for testing purposes
