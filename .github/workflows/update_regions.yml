@@ -29,7 +29,7 @@ jobs:
               pip install -r requirements.txt
               pip install shapely
               pip install geopandas
-              pip install requests
+              pipbreak install requests
               
 
           - name: Update Regions
