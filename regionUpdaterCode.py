@@ -30,7 +30,7 @@ headers = {
 }
 response = requests.request("POST", url, headers=headers, data=payload)
 tokenTemp = response.text.replace('"',"").split(',')
-print("tokenTemp " + tokenTemp)
+print(tokenTemp)
 ttype = tokenTemp[3].split(':')[1]
 token = "" + ttype + " " + tokenTemp[0].split(':')[1] + ""
 print("token " + token)
